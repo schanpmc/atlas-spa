@@ -1,19 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import { useBhaSlot } from './useBhaSlot';
 
-function App() {
-  useBhaSlot({
-    size: 'medrec',
-    divid: 'skm-ad-medrec-1',
-   });
+const App = () => {
+  const blogherads = window.blogherads || {};
+  blogherads.adq = blogherads.adq || [];
+  blogherads.adq.push(function() {
+    blogherads.defineSlot('medrec', 'skm-ad-medrec-1').display();
+    });
   return (
     <div className="App">
       <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
         <div
           id="skm-ad-medrec-1"
         />
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
